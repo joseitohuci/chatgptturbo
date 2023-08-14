@@ -9,7 +9,7 @@ emoji_user = "🙋"
 #load_dotenv()  # carrega as variáveis de ambiente do arquivo .env
 #openai.api_key = os.getenv('SENHA_OPEN_AI')
 
-openai.api_key = streamlit.secrets["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"]
+openai.api_key = streamlit.secrets["Clave_Open_AI"]
 
 streamlit.title(f'{emoji_robo} Pergunte a Jarvis')
 streamlit.write('***')
