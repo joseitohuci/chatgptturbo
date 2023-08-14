@@ -9,7 +9,7 @@ emoji_user = "🙋"
 #load_dotenv()  # corrige las variables de ambiente del archivo .env
 #openai.api_key = os.getenv('SENHA_OPEN_AI')
 
-openai.api_key = streamlit.secrets["Clave_Open_AI"]
+openai.api_key = streamlit.secrets["ClaveAI"]
 
 streamlit.title(f'{emoji_robo} Pergunte a Jarvis')
 streamlit.write('***')
@@ -27,7 +27,7 @@ with col2:
 if btn_enviar: 
     streamlit.session_state.hst_conversa.append({"role": "user", "content": pregunta})
     retorno_openai = openai.ChatCompletion.create(
-        model = "text-davinci-003", 
+        model = "gpt-3.5-turbo", 
         messages = streamlit.session_state.hst_conversa,
         max_tokens = 1000,
         n=1
