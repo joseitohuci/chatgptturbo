@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 emoji_robo = "🤖"
 emoji_user = "🙋"
 
-#load_dotenv()  # carrega as variáveis de ambiente do arquivo .env
+#load_dotenv()  # corrige las variables de ambiente del archivo .env
 #openai.api_key = os.getenv('SENHA_OPEN_AI')
 
 openai.api_key = streamlit.secrets["Clave_Open_AI"]
