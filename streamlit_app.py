@@ -7,7 +7,7 @@ emoji_user = "🙋"
 
 openai.api_key = streamlit.secrets["ClaveAI"]
 
-streamlit.title(f'{emoji_robo} Pergunte a Wall-E (BETA🫤)')
+streamlit.title(f'{emoji_robo} Pergunte a Wall-E(BETA🫤)')
 streamlit.write('***')
 
 if 'hst_conversa' not in streamlit.session_state:
@@ -27,7 +27,7 @@ def enviar_mensaje():
     retorno_openai = openai.ChatCompletion.create(
         model = "gpt-3.5-turbo", 
         messages = streamlit.session_state.hst_conversa,
-        max_tokens = 1000,
+        max_tokens = 500,
         n=1
     )
     streamlit.session_state.hst_conversa.append(
