@@ -26,13 +26,10 @@ def enviar_mensaje():
     streamlit.session_state.hst_conversa.append({"role": "user", "content": pregunta})
     retorno_openai = openai.ChatCompletion.create(
         model = "gpt-3.5-turbo", 
-        engine="text-davinci-003",
         messages = streamlit.session_state.hst_conversa,
-        max_tokens = 500,
-        n=1
     )
     streamlit.session_state.hst_conversa.append(
-        {"role": "assistant", 
+        {"role": "user", 
          "content": retorno_openai['choices'][0]['message']['content']})
     pregunta = ""  # Limpiar el cuadro de texto
 
