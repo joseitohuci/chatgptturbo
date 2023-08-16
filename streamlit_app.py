@@ -12,7 +12,7 @@ streamlit.write('***')
 
 if 'hst_conversa' not in streamlit.session_state:
     streamlit.session_state.hst_conversa = []
-    pregunta = streamlit.text_input('Digite su pregunta: ')
+pregunta = streamlit.text_input('Digite su pregunta: ')
 
 col1, col2 = streamlit.columns(2)
 
