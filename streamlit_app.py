@@ -1,6 +1,7 @@
 import streamlit
 import os 
 import openai
+import json
 
 emoji_robo = "🤖"
 emoji_user = "🙋"
@@ -25,11 +26,14 @@ def enviar_mensaje():
     global pregunta
     streamlit.session_state.hst_conversa.append({"role": "user", "content": pregunta})
     retorno_openai = openai.ChatCompletion.create(
-        model = "text-davinci-003", 
+        model = "text-davinci-003",         
+        engine="text-davinci-003",
         messages = streamlit.session_state.hst_conversa,
+		max_tokens=2046,
+		n = 1
     )
     streamlit.session_state.hst_conversa.append(
-        {"role": "user", 
+        {"role": "assistant", 
          "content": retorno_openai['choices'][0]['message']['content']})
     pregunta = ""  # Limpiar el cuadro de texto
 
