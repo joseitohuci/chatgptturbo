@@ -27,7 +27,7 @@ def enviar_mensaje():
     retorno_openai = openai.ChatCompletion.create(
         model = "text-davinci-003", 
         messages = streamlit.session_state.hst_conversa,
-        temperature: 0.7
+        temperature: 0.7,
     )
     streamlit.session_state.hst_conversa.append(
         {"role": "user", 
