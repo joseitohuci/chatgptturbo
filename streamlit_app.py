@@ -25,8 +25,9 @@ def enviar_mensaje():
     global pregunta
     streamlit.session_state.hst_conversa.append({"role": "user", "content": pregunta})
     retorno_openai = openai.ChatCompletion.create(
-        model = "gpt-3.5-turbo", 
+        model = "text-davinci-003", 
         messages = streamlit.session_state.hst_conversa,
+        temperature: 0.7
     )
     streamlit.session_state.hst_conversa.append(
         {"role": "user", 
