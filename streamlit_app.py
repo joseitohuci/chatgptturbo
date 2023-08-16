@@ -53,7 +53,7 @@ if len(streamlit.session_state.hst_conversa) > 0:
                 streamlit.write(f"{emoji_user} Tu: " + streamlit.session_state.hst_conversa[i]['content'])
         else:
             with streamlit.container():
-                streamlit.write(f"{emoji_robo} Jarvis: " + streamlit.session_state.hst_conversa[i]['content'])
+                streamlit.write(f"{emoji_robo} Wall-E: " + streamlit.session_state.hst_conversa[i]['content'])
                 
 #informaciones del autor
 streamlit.sidebar.markdown("<h3 style='text-align: center; font-size: 20px; color: Red'>By ImJoseitoh &reg - 2023</h3><p><h2><center>+5356960902</h2></p>", unsafe_allow_html=True)
